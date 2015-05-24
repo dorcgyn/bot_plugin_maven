@@ -24,10 +24,8 @@ public class PixelFunc {
 	}
 	
 	public static void translateColor(Color color) {
-		System.out.println("/** Color is:");
-		System.out.println("Red: " + color.getRed());
-		System.out.println("Green: " + color.getGreen());
-		System.out.println("Blue: " + color.getBlue());
-		System.out.println("**/");
+		System.out.print("Red: " + color.getRed() + "  ");
+		System.out.print("Green: " + color.getGreen() + "  ");
+		System.out.print("Blue: " + color.getBlue() + "\n");
 	}
 }

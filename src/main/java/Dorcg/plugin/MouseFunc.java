@@ -31,6 +31,16 @@ public class MouseFunc {
 		leftPress(); 
 		leftRelease();
 	}
+	public void doubleClick() {
+		leftClick();
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		leftClick();
+	}
+	
 	
 	public void rightPress() {
 		bot.mousePress(InputEvent.BUTTON3_MASK);		

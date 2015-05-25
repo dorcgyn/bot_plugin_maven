@@ -9,7 +9,7 @@ import Dorcg.plugin.PixelFunc;
 
 public class RangeScanUtil {
 	// Use array of pointer 
-	private static ArrayList<Color> scanRange(ArrayList<Point> range) {
+	public static ArrayList<Color> scanRange(ArrayList<Point> range) {
 		PixelFunc pixel;
 		try {
 			pixel = new PixelFunc();
@@ -24,14 +24,15 @@ public class RangeScanUtil {
 		return colors;
 	}
 	
-	public static ArrayList<Point> calRectRange(int max_x, int min_x, int step_x,
-			int max_y, int min_y, int step_y) {
+	public static ArrayList<Point> calRectRange(int min_x, int max_x, int step_x,
+			int min_y, int max_y, int step_y) {
 		ArrayList<Point> range = new ArrayList<Point>();
 		for (int x = min_x; x < max_x; x+=step_x) {
 			for (int y = min_y; y < max_y; y+=step_y) {
 				Point point = new Point();
 				point.x = x;
 				point.y = y;
+				range.add(point);
 			}
 		}
 		return range;

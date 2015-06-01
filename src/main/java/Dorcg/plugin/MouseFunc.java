@@ -7,7 +7,9 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 
 public class MouseFunc {
+	private final static int SLEEP_MS = 100; 
 	private Robot bot;
+	
 	public MouseFunc() throws AWTException {
 		bot = new Robot();
 	}
@@ -17,24 +19,26 @@ public class MouseFunc {
 		return pointer;
 	}
 	
-	public void moveMouse(int x, int y) {
+	public void moveMouse(int x, int y) throws InterruptedException {
+		Thread.sleep(SLEEP_MS);
 		bot.mouseMove(x,y);
 	}
 	
-	public void leftPress() {
+	public void leftPress() throws InterruptedException {
+		Thread.sleep(SLEEP_MS);
 		bot.mousePress(InputEvent.BUTTON1_MASK);		
 	}
 	public void leftRelease() {
 		bot.mouseRelease(InputEvent.BUTTON1_MASK);		
 	}
-	public void leftClick() {
+	public void leftClick() throws InterruptedException {
 		leftPress(); 
 		leftRelease();
 	}
-	public void doubleClick() {
+	public void doubleClick() throws InterruptedException {
 		leftClick();
 		try {
-			Thread.sleep(100);
+			Thread.sleep(SLEEP_MS);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

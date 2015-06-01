@@ -42,17 +42,13 @@ public class Main {
 	private static void response() throws AWTException, InterruptedException {
 		MouseFunc mouse = new MouseFunc();
 		mouse.moveMouse((SampleIcon.ICON_X_MIN + SampleIcon.ICON_X_MAX)/2, (SampleIcon.ICON_Y_MIN + SampleIcon.ICON_Y_MAX)/2);
-		Thread.sleep(100);
 		mouse.leftClick();
 		
 		mouse.moveMouse(776,978);
-		Thread.sleep(100);
 		mouse.leftClick();
 		
 		KeyboardFunc key = new KeyboardFunc();
-		Thread.sleep(100);
-		key.keyClick(KeyEvent.VK_COMMA);
-		Thread.sleep(100);
+		key.typeString("Hi, I am available now :)");
 		key.keyClick(KeyEvent.VK_ENTER);
 		Thread.sleep(1000);
 		key.alt_F4();

@@ -52,4 +52,25 @@ public class ScanInfo {
 		}
 		return true;
 	}
+	
+	// Search Color Util
+	public boolean hasColor(Color targetColor, double percentage) {
+		int totalCount = range.size();
+		int sameCount = findPointWithSameColor(targetColor).size();
+		
+		if ( (double)sameCount / (double)totalCount > percentage) {
+			return true;
+		}
+		return false;
+	}
+	public ArrayList<Point> findPointWithSameColor (Color targetColor) {
+		ArrayList<Point> findPoints = new ArrayList<Point>();
+		for (int i = 0; i < range.size(); i++ ) {
+			Color pixel = color.get(i);
+			if (pixel.equals(targetColor)) {
+				findPoints.add(range.get(i));
+			}
+		}
+		return findPoints;
+	}
 }
